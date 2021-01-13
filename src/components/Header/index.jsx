@@ -6,12 +6,14 @@ import Hamburger from '../../images/icon-hamburger.svg';
 
 export const Header = () => {
   const [mobileMenu, setMobileMenu] = React.useState(false);
-  const mobile = useMedia('(max-width: 40rem)');
+  const mobile = useMedia('(max-width: 44rem)');
 
   function handleClick() {
     setMobileMenu(!mobileMenu);
   }
-
+  React.useEffect(() => {
+    if (!mobile) setMobileMenu(false);
+  }, [mobile]);
   return (
     <Cab>
       <h2>Shortly</h2>
