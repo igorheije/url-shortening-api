@@ -18,12 +18,22 @@ export const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
+    height: 100%;
+    position: relative;
+
     section{
         background: white;
-        margin: 50px 10px 0 10px;
+        margin: 40px 20px 20px 20px;
         width: 300px;
         position: relative;
         padding: 20px;
+    }
+    section+section{
+        transform: translateY(40px);
+    }
+    section+section+section{
+        transform: translateY(80px);
     }
     p{
         color: hsl(257, 7%, 63%);
@@ -37,11 +47,14 @@ export const Card = styled.div`
         height:70px;
         background:hsl(255, 11%, 22%);
         border-radius: 50%;
-        top: -40px;
+        transform: translateY(-60%)
 
-        position: absolute;
     }
     h2{
-        margin-top: 40px;
+        margin-top:0px
     }
+    @media(max-width:850px){
+        flex-direction: column;
+    }
+    
 `

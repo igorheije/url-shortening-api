@@ -6,7 +6,7 @@ export const Boot = styled.div`
     background-image: url(${BgBoost});
     background-size: cover;
     background-color: hsl(257, 27%, 26%);
-    height: 200px;
+    height: 250px;
 
     display:flex;
     flex-direction: column;
@@ -15,7 +15,7 @@ export const Boot = styled.div`
     text-align: center;
     font-family: 'Poppins', sans-serif;
     h1{
-        font-size: 3rem;
+        font-size: minmax(2rem, 3rem);
         color: white;
     }
     button{

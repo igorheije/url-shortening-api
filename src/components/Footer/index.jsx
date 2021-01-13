@@ -31,17 +31,20 @@ export const Footer = () => {
         <li>Contact</li>
       </ul>
       <div>
-        <a href="#">
-          <i src={Github}></i>
+        <a target="_blank" href="https://github.com/igorheije">
+          <img src={Github}></img>
         </a>
-        <a href="#">
-          <i src={Facebook}></i>
+        <a target="_blank" href="https://www.facebook.com/igor.heije">
+          <img src={Facebook}></img>
         </a>
-        <a href="#">
-          <i src={Instagram}></i>
+        <a target="_blank" href="https://www.instagram.com/heijes.i/">
+          <img src={Instagram}></img>
         </a>
-        <a href="#">
-          <i src={Linkedin}></i>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/igor-heije-morais-tomori-1052071b8/"
+        >
+          <img src={Linkedin}></img>
         </a>
       </div>
     </Foo>

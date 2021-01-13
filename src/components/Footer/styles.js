@@ -5,16 +5,46 @@ export const Foo = styled.div`
     color: white;
 
     display: grid;
-    grid-template-columns: max(300px) 1fr 1fr 1fr 100px;
-    padding: 20px 8%;
-    
-
+    grid-template-columns: minmax(100px, 1fr) 1fr 1fr 1fr 200px;
+    padding: 40px 8%;
+    gap: 20px;
+    *{margin:0px;}
     li{
         list-style-type: none;
         margin: 10px 0;
         font-size: 12px;
     }
-    i{
-        width: 100%;
+    a+a{
+        margin-left: 20px;
+    }
+    
+    
+    @media(max-width:850px){
+        grid-template-columns: 1fr 1fr 1fr;
+        
+        h2{
+            grid-column: span 3;
+            justify-self: center;
+
+        }
+        div{
+            grid-column: span 3;
+            text-align: center;
+            padding:40px 0;
+        }
+    }
+    @media(max-width:550px){
+        grid-template-columns: 1fr;
+
+        h2{
+            grid-column: span 1;
+        }
+        div{
+            grid-column: span 1;
+        }
+        ul{
+            text-align: center;
+            padding: 0px;
+        }
     }
 `;
