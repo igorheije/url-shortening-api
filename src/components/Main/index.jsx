@@ -8,6 +8,9 @@ export const Main = () => {
   const [link, setLink] = React.useState('');
   const [error, setError] = React.useState(null);
   const [reduzida, setReduzida] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+
+  const copia = React.useRef(null);
 
   const url = 'https://api.shrtco.de/v2/shorten?url=';
   function handleSubmit(e) {
@@ -16,12 +19,23 @@ export const Main = () => {
     e.target[0].value = '';
     e.target[0].focus();
   }
+  function copiar() {
+    const texto = copia.current.href;
+    let inputTest = document.createElement('input');
+    inputTest.value = texto;
+    document.body.appendChild(inputTest);
+    inputTest.select();
+    document.execCommand('copy');
+    document.body.removeChild(inputTest);
+  }
 
   React.useEffect(() => {
     async function pesquisar(l) {
       if (l === '') return null;
       try {
+        setLoading(true);
         setError(null);
+        if (loading) document.body.style.cursor = 'wait';
         const response = await fetch(url + l, {
           method: 'GET',
         });
@@ -29,16 +43,18 @@ export const Main = () => {
           const json = await response.json();
           const valor = await json.result;
 
-          console.log(valor);
           setReduzida([...reduzida, valor]);
         } else throw new Error('Please, add a link valid');
       } catch (err) {
         setError(err.message);
       } finally {
+        setLink('');
+        setLoading(false);
+        document.body.style.cursor = 'default';
       }
     }
     pesquisar(link);
-  }, []);
+  }, [link, loading]);
 
   return (
     <>
@@ -65,10 +81,14 @@ export const Main = () => {
             <Links key={l.code}>
               <h4>{l.original_link}</h4>
               <span>
-                <a target="_blank" href={l.short_link2}>
+                <a
+                  ref={copia}
+                  target="_blank"
+                  href={`https://${l.short_link2}`}
+                >
                   https://{l.short_link2}
                 </a>
-                <button>Copiar</button>
+                <button onClick={copiar}>Copiar</button>
               </span>
             </Links>
           );

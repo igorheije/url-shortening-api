@@ -65,16 +65,20 @@ export const Shorten = styled.form`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 span{
     color: hsl(0, 87%, 67%);
+    order: 10;
+    justify-self: flex-start;
 }
 input{ 
     padding: 20px;
     font-size: 1.2rem;
     border-radius: 8px;
-    width: 100%;
+    width: 75%;
 
 }
+
 button{
     background: hsl(180, 66%, 49%);
     border: none;
@@ -87,19 +91,27 @@ button{
     color: white;
     font-family: 'Poppins', sans-serif;
     margin-left: 30px;
-    width: 170px;
+    width: 150px;
 
 }
 button:hover{
     background: hsl(180, 66%, 69%);
 }
-@media(max-width: 750px){
+@media(max-width: 800px){
     flex-direction: column;
     background-image: url(${shortenM});
+    padding: 50px 5%;
+    input{ 
+    width: 100%;
+}
     button{
         width: 100%;
         margin-top: 20px;
         margin-left: 0px;
+    }
+    span{
+    order: 0;
+
     }
 }
 `

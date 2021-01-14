@@ -12,6 +12,7 @@ export const Cab = styled.header`
         justify-self: end;
         border: none;
         outline: none;
+        padding-top: 8px;
     }
     > button > img{
         color:hsl(257, 7%, 63%);
@@ -52,6 +53,7 @@ align-items: center;
         font-size: 16px;
         transition: .3s;
         border-radius: 20px;
+        background-color:  #eee;
 
     }
     span > button:hover{
@@ -99,6 +101,7 @@ export const MobileM = styled.div`
         border-radius: 20px;
         color: white;
         width: 80%;
+        margin-top: 5px;
 
     }
     span > button:hover{
