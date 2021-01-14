@@ -33,7 +33,6 @@ export const Main = () => {
     button.innerText = 'Copied!';
     button.style.background = 'hsl(257, 27%, 26%)';
   }
-
   React.useEffect(() => {
     async function pesquisar(l) {
       if (l === '') return null;
@@ -48,7 +47,7 @@ export const Main = () => {
           const json = await response.json();
           const valor = await json.result;
 
-          setReduzida([...reduzida, valor]);
+          setReduzida((r) => [...r, valor]);
         } else throw new Error('Please, add a link valid');
       } catch (err) {
         setError(err.message);
