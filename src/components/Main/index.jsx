@@ -67,7 +67,7 @@ export const Main = () => {
           </p>
           <button>Get Started</button>
         </div>
-        <img src={Illustration} alt="" />
+        <img src={Illustration} alt="Illustration" />
       </Container>
       <Shorten onSubmit={handleSubmit}>
         <input type="text" placeholder="Shorten a link here..." />
@@ -81,13 +81,7 @@ export const Main = () => {
             <Links key={l.code}>
               <h4>{l.original_link}</h4>
               <span>
-                <a
-                  ref={copia}
-                  target="_blank"
-                  href={`https://${l.short_link2}`}
-                >
-                  https://{l.short_link2}
-                </a>
+                <a ref={copia}>https://{l.short_link2}</a>
                 <button onClick={copiar}>Copiar</button>
               </span>
             </Links>

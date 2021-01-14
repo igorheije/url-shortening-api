@@ -32,19 +32,19 @@ export const Footer = () => {
       </ul>
       <div>
         <a target="_blank" href="https://github.com/igorheije">
-          <img src={Github}></img>
+          <img src={Github} alt="Github"></img>
         </a>
         <a target="_blank" href="https://www.facebook.com/igor.heije">
-          <img src={Facebook}></img>
+          <img src={Facebook} alt="Facebook"></img>
         </a>
         <a target="_blank" href="https://www.instagram.com/heijes.i/">
-          <img src={Instagram}></img>
+          <img src={Instagram} alt="Instagram"></img>
         </a>
         <a
           target="_blank"
           href="https://www.linkedin.com/in/igor-heije-morais-tomori-1052071b8/"
         >
-          <img src={Linkedin}></img>
+          <img src={Linkedin} alt="Linkedin"></img>
         </a>
       </div>
     </Foo>
