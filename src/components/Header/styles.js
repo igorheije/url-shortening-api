@@ -17,11 +17,10 @@ export const Cab = styled.header`
     > button > img{
         color:hsl(257, 7%, 63%);
     }
-    a{
-        text-decoration: none;
-    }
+   
     li{
         list-style-type: none;
+        cursor: pointer;
     }
     ul{
         padding: 0px;

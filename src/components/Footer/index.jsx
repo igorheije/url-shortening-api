@@ -31,17 +31,26 @@ export const Footer = () => {
         <li>Contact</li>
       </ul>
       <div>
-        <a target="_blank" href="https://github.com/igorheije">
+        <a target="_blank" rel="noreferrer" href="https://github.com/igorheije">
           <img src={Github} alt="Github"></img>
         </a>
-        <a target="_blank" href="https://www.facebook.com/igor.heije">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.facebook.com/igor.heije"
+        >
           <img src={Facebook} alt="Facebook"></img>
         </a>
-        <a target="_blank" href="https://www.instagram.com/heijes.i/">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.instagram.com/heijes.i/"
+        >
           <img src={Instagram} alt="Instagram"></img>
         </a>
         <a
           target="_blank"
+          rel="noreferrer"
           href="https://www.linkedin.com/in/igor-heije-morais-tomori-1052071b8/"
         >
           <img src={Linkedin} alt="Linkedin"></img>

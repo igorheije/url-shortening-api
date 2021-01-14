@@ -19,20 +19,14 @@ export const Header = () => {
       <h2>Shortly</h2>
       {mobile ? (
         <button onClick={handleClick}>
-          <img src={Hamburger} />
+          <img src={Hamburger} alt="Hamburger" />
         </button>
       ) : (
         <Desktop>
           <ul>
-            <a href="#">
-              <li>Features</li>
-            </a>
-            <a href="#">
-              <li>Pricing</li>
-            </a>
-            <a href="#">
-              <li>Resources</li>
-            </a>
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Resources</li>
           </ul>
           <span>
             <button>Login</button>
@@ -43,15 +37,9 @@ export const Header = () => {
       {mobileMenu && (
         <MobileM>
           <ul>
-            <a href="#">
-              <li>Features</li>
-            </a>
-            <a href="#">
-              <li>Pricing</li>
-            </a>
-            <a href="#">
-              <li>Resources</li>
-            </a>
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Resources</li>
           </ul>
           <hr />
           <span>
