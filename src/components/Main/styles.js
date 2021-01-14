@@ -125,10 +125,15 @@ export const Links = styled.div`
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
-    a{
-        text-decoration: none;
+    form{
+        display: flex;
+        align-items: center;
+    }
+    input{
         color: hsl(180, 66%, 49%);
+        border: none;
+        outline: none;
+        cursor:  default;
     }
     
     button{

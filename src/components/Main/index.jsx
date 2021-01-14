@@ -10,23 +10,28 @@ export const Main = () => {
   const [reduzida, setReduzida] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
-  const copia = React.useRef(null);
-
   const url = 'https://api.shrtco.de/v2/shorten?url=';
+
   function handleSubmit(e) {
     e.preventDefault();
     setLink(e.target[0].value);
     e.target[0].value = '';
     e.target[0].focus();
   }
-  function copiar() {
-    const texto = copia.current.href;
+
+  function copiar(e) {
+    e.preventDefault();
+    const valor = e.target[0].value;
+    const button = e.target[1];
     let inputTest = document.createElement('input');
-    inputTest.value = texto;
+    inputTest.value = valor;
     document.body.appendChild(inputTest);
     inputTest.select();
     document.execCommand('copy');
     document.body.removeChild(inputTest);
+
+    button.innerText = 'Copied!';
+    button.style.background = 'hsl(257, 27%, 26%)';
   }
 
   React.useEffect(() => {
@@ -80,10 +85,10 @@ export const Main = () => {
           return (
             <Links key={l.code}>
               <h4>{l.original_link}</h4>
-              <span>
-                <a ref={copia}>https://{l.short_link2}</a>
-                <button onClick={copiar}>Copiar</button>
-              </span>
+              <form onSubmit={copiar}>
+                <input readOnly value={`https://${l.short_link2}`} />
+                <button>Copy</button>
+              </form>
             </Links>
           );
         })}
