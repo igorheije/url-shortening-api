@@ -8,7 +8,6 @@ export const Main = () => {
   const [link, setLink] = React.useState('');
   const [error, setError] = React.useState(null);
   const [reduzida, setReduzida] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
 
   const url = 'https://api.shrtco.de/v2/shorten?url=';
 
@@ -16,7 +15,6 @@ export const Main = () => {
     e.preventDefault();
     setLink(e.target[0].value);
     e.target[0].value = '';
-    e.target[0].focus();
   }
 
   function copiar(e) {
@@ -34,13 +32,12 @@ export const Main = () => {
     button.style.background = 'hsl(257, 27%, 26%)';
   }
   React.useEffect(() => {
-    async function pesquisar(l) {
-      if (l === '') return null;
+    const pesquisar = async () => {
+      if (link === '') return null;
       try {
-        setLoading(true);
         setError(null);
-        if (loading) document.body.style.cursor = 'wait';
-        const response = await fetch(url + l, {
+        document.body.style.cursor = 'wait';
+        const response = await fetch(url + link, {
           method: 'GET',
         });
         if (response.ok) {
@@ -53,12 +50,11 @@ export const Main = () => {
         setError(err.message);
       } finally {
         setLink('');
-        setLoading(false);
         document.body.style.cursor = 'default';
       }
-    }
-    pesquisar(link);
-  }, [link, loading]);
+    };
+    pesquisar();
+  }, [link]);
 
   return (
     <>

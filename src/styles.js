@@ -6,7 +6,7 @@ export const Geral = styled.div`
 export const Global = styled.div`
 
     background-color:  #eee;
-    
+    overflow:hidden;
 
     *{
         box-sizing: border-box;

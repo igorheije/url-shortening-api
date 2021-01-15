@@ -7,8 +7,10 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 100px;
+    
     div{
-        grid-column: 1fr
+        grid-column: 1fr;
+        
     }
     h1{
         font-size: 4rem;
@@ -19,6 +21,8 @@ export const Container = styled.div`
     }
     img{
        width: 120%; 
+       
+       clip: rect(0, 0, 0, 100px); 
     }
     button{
         background: hsl(180, 66%, 49%);
@@ -128,12 +132,22 @@ export const Links = styled.div`
     form{
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
+    }
+    h4{
+        font-size: 14px;
+        line-break: break-all;
+        margin-bottom: 10px;
     }
     input{
         color: hsl(180, 66%, 49%);
         border: none;
         outline: none;
         cursor:  default;
+        margin-bottom: 10px;
+        margin-right: 20px;
+
+
     }
     
     button{
@@ -147,7 +161,6 @@ export const Links = styled.div`
     border-radius: 4px;
     color: white;
     font-family: 'Poppins', sans-serif;
-        margin-left: 20px;
 }
 button:hover{
     background: hsl(180, 66%, 69%);

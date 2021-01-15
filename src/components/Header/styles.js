@@ -65,7 +65,7 @@ export const MobileM = styled.div`
 
     position: absolute;
     width: 95%;
-    top: 80px;
+    top: 60px;
     border-radius: 10px;
     background: hsl(257, 27%, 26%);
     display: flex;
@@ -73,7 +73,9 @@ export const MobileM = styled.div`
     align-items: center;
     padding: 10px;
 
-
+    ul{
+        text-align: center;
+    }
     li{
         color: white;
         padding: 10px 0;
